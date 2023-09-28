@@ -1,1 +1,1 @@
-mod move;
+mod all_tests;
