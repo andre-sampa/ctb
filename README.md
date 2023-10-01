@@ -1,5 +1,5 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset=".github/Cover_good_no-season.svg">
+  <source srcset=".github/Cover_good_no-season.svg">
   <img alt="Dojo logo" align="right" width="120" src=".github/Cover_good_no-season.svg">
 </picture>
 
@@ -16,7 +16,7 @@
 [tg-badge]: https://img.shields.io/endpoint?color=neon&logo=telegram&label=chat&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fdojoengine
 [tg-url]: https://t.me/dojoengine
 
-# Dojo Starter: Official Guide
+# Dojo Starter: Ctb on chain! :D
 
 The official Dojo Starter guide, the quickest and most streamlined way to get your Dojo Autonomous World up and running. This guide will assist you with the initial setup, from cloning the repository to deploying your world.
 
