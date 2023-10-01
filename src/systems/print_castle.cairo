@@ -25,7 +25,7 @@ mod tests {
 
     #[test]
     #[available_gas(100000)]
-    fn printCastleTEST() {
+    fn print_castle_test() {
         let test_wallet = starknet::contract_address_const::<0x0>();
         let mut new_castle = Castle {name: 'north', HP: 100};
         printCastle(new_castle);

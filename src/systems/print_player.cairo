@@ -29,11 +29,10 @@ mod tests {
 
     #[test]
     #[available_gas(100000)]
-    fn printPlayerTEST() {
-        let Name = 'Andre';
+    fn print_player_test() {
         let test_wallet = starknet::contract_address_const::<0x0>();
         let mut north_castle = Castle {name: 'north', HP: 100};
-        let mut new_player = Player {enrolled: true, name: Name , wallet: test_wallet, sharp: false, attack_damage: 10,};
+        let mut new_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
         printPlayer(new_player);
         assert(new_player.name == 'Andre', 'wrong player name');
     }

@@ -1,60 +1,11 @@
-// ATTACK_SYSTEM
-#[system]
-mod attack_system {
-    use debug::PrintTrait;
-    use dojo::world::Context;
-    use starknet::ContractAddress;
-    use ctb_dojo::components::{Castle, Player,};
-    use ctb_dojo::systems::random::random_system::random;
-
-
-// ATTACK FUNCTION - Function for attack and damage
-fn attack(player:Player, ref castle: Castle) {
-        // Check target castle
-        if castle.name == 'north' {
-            '---ATTACKING NORTH FUNCTION---'.print();
-            'Show North HP'.print();
-             castle.HP.print();
-            'Attacking north'.print();
-            let mut damage:u64 = random();
-                if player.sharp == true {
-                    damage = damage + ((damage * 25) / 100);
-                }
-            'Show attack damage'.print();
-            damage.print();
-            castle.HP = castle.HP - damage;
-            'Show final North HP:'.print();
-            castle.HP.print();
-        }
-        if castle.name == 'south' {
-            '---ATTACKING SOUTH FUNCTION---'.print();
-            'Show South HP'.print();
-             castle.HP.print();
-            'Attacking north'.print();
-            let x = player.attack_damage;
-            'Show attack damage'.print();
-            x.print();
-            castle.HP = castle.HP - x;
-            'Show final South HP:'.print();
-            castle.HP.print();
-        }
-
-    }
-
-}
-
-
-
-
-
 // ATTACK TEST - Creates a new player and a castle to verify attack and damage
 #[cfg(test)]
 mod tests {
+    use debug::PrintTrait;
     use ctb_dojo::components::{Player, PlayerTrait};
     use ctb_dojo::components::{Castle,};
     // why we must specify each function and not just the entire mod system?
-    use super::attack_system::attack;
-    use debug::PrintTrait;
+    use ctb_dojo::systems::attack::attack_system::attack;
     use ctb_dojo::systems::print_castle::print_castle_system::printCastle;
     use ctb_dojo::systems::random::random_system::random;
 
@@ -92,8 +43,3 @@ mod tests {
         assert(x > 0 , 'x is 0');
     }
 }
-
-
-
-
-
