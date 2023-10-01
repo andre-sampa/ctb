@@ -18,7 +18,7 @@
 
 # BANNERS - Ctb on chain!
 
-The official Dojo Starter guide, the quickest and most streamlined way to get your Dojo Autonomous World up and running. This guide will assist you with the initial setup, from cloning the repository to deploying your world.
+Call the Banners game on Starknet. First approach to Cairo and Realms AW integration.
 
 Read the full tutorial [here](https://book.dojoengine.org/cairo/hello-dojo.html)
 
