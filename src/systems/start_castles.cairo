@@ -1,10 +1,8 @@
-// INITIALIZE CASTLES
+// INITIALIZE CASTLES - Start game
 
 // SOUTH CASTLE
 #[system]
 mod initiate_south_castle {
-    use array::ArrayTrait;
-    use traits::Into;
     use dojo::world::Context;
     use starknet::ContractAddress;
     use ctb_dojo::components::{Castle,};
@@ -24,8 +22,6 @@ mod initiate_south_castle {
 // NORTH CASTLE 
 #[system]
 mod initiate_north_castle {
-    use array::ArrayTrait;
-    use traits::Into;
     use dojo::world::Context;
     use starknet::ContractAddress;
     use ctb_dojo::components::{Castle,};
@@ -41,8 +37,7 @@ mod initiate_north_castle {
     }
 }
 
-
-// CASTELS TEST - Check new game integrity 
+// CASTLES TEST - Check new game integrity 
 #[cfg(test)]
 mod tests {
     use ctb_dojo::components::{Castle,};

@@ -13,6 +13,20 @@ struct Castle {
     HP: u64,
 }
 
+// PRINT CASTLE IMPLEMENTATION - Implement a Castle print to PrintTrait<>
+// CHECK WHY WE CAN'T MAKE player.print() and castle.print() to work
+// CHECK WHY WE MUST CHANGE NAME, A BUG SAYS PlayerCastleImpl IS DEFINED MULTIPLE TIMES
+
+impl CastlePrintImpl_AAA of PrintTrait<Castle> {
+    fn print(self: Castle) {
+        '---PRINTING CASTEL---'.print();
+        'NAME:'.print();
+        self.name.print();
+        'HP:'.print();
+        self.HP.print();
+    }
+}
+
 // PLAYER - Define Player attributes
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct Player {
@@ -36,23 +50,27 @@ impl PlayerTraitImpl of PlayerTrait {
     fn sharpen (ref self: Player) -> bool {
     '---!SHARPEN COMMAND---'.print();
         if self.sharp == false {
-           self.attack_damage = 15;
-           'Your sword is now sharpened.'.print();
-           'The blacksmith did a great job.'.print();
-           'Ready for war, my Lord!'.print();
-           self.sharp = true;
-           return (self.sharp);
-        } else {
-            let message: felt252 = 'Your sword is already sharpened'; // if we add one more character we get felt252 error, check it out later
-            message.print(); 
-            self.sharp = false;
+            // Increase the attack damage by 25% 
+            let a:u64 = 25;
+            self.attack_damage = (self.attack_damage * a) / 100 ;
+            'Your sword is now sharpened.'.print();
+            'The blacksmith did a great job.'.print();
+            'Ready for war, my Lord!'.print();
+            self.sharp = true;
             return (self.sharp);
-           
+            } 
+            else {
+                let message: felt252 = 'Your sword is already sharpened'; // if we add one more character we get felt252 error, check it out later
+                message.print(); 
+                self.sharp = false;
+                return (self.sharp);
+            
+            }
         }
-    }
 }
 
 // PRINT PLAYER IMPLEMENTATION - Implement a player print to PrintTrait<>
+// CHECK WHY WE CAN'T MAKE player.print() to work on tests
 // CHECK WHY WE MUST CHANGE NAME, A BUG SAYS PlayerPrintImpl IS DEFINED MULTIPLE TIMES
 impl PlayerPrintImpl_AAA of PrintTrait<Player> {
     fn print(self: Player) {
@@ -85,7 +103,6 @@ mod tests {
     // IMPORT TEST REFERENCES
     use ctb_dojo::components::{Player, PlayerTrait};
     use ctb_dojo::components::{Castle,};
-    use ctb_dojo::systems::attack_system::attack;
     use ctb_dojo::components::GameSettings;
 
     // GAME SETTINGS TEST - Verify game id 
@@ -94,7 +111,7 @@ mod tests {
     fn game_settings_test() {
         let id = 1;
         let cool_down = 60;
-        let settings = GameSettings {game_settings_id: id,combat_cool_down: cool_down};
+        let settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down};
         assert(settings.game_settings_id == 1, 'id is not 1');
     }
 
@@ -102,9 +119,8 @@ mod tests {
     #[test]
     #[available_gas(100000)]
     fn sharpen_test() {
-        let Name = 'Andre';
         let test_wallet = starknet::contract_address_const::<0x01>();
-        let mut test_sharpen_player = Player {enrolled: true, name: Name , wallet: test_wallet, sharp: false, attack_damage: 10,};
+        let mut test_sharpen_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
         assert(PlayerTrait::sharpen(ref test_sharpen_player), 'not sharpened');
     }
 

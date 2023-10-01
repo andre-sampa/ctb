@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset=".github/mark-dark.svg">
-  <img alt="Dojo logo" align="right" width="120" src=".github/mark-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset=".github/Cover_good_no-season.jpg">
+  <img alt="Dojo logo" align="right" width="120" src=".github/Cover_good_no-season.jpg">
 </picture>
 
 <a href="https://twitter.com/dojostarknet">
