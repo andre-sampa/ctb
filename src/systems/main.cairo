@@ -15,12 +15,11 @@ fn main() {
     // THIS ONE IS WORKING BC WE GAVE THE FUNCTION A DIFFERENT NAME
     'Calling start_lobby fn'.print();
     start_lobby();
-    'Calling start_castle fn'.print();
-    start_castles();
+
     }
 }
 
-// MAIN TEST
+// MAIN TEST - main() will call start_lobby() that will call start_castles()
 #[cfg(test)]
 mod tests {
     use ctb_dojo::systems::main::main_system::main;
