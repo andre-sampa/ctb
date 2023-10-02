@@ -19,7 +19,7 @@ mod initialize_castles {
 #[cfg(test)]
 mod tests {
     use ctb_dojo::components::Castle;
-    use ctb_dojo::systems::initialize_castles::start_castles;
+    use ctb_dojo::systems::start_castles::initialize_castles::start_castles;
     #[test]
     #[available_gas(100000)]
     fn castles_test() {
