@@ -105,8 +105,9 @@ impl PlayerPrintImpl_AAA of PrintTrait<Player> {
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct GameSettings {
     #[key]
-    game_settings_id: u32,
-    combat_cool_down: u32,
+    game_settings_id: u64,
+    combat_cool_down: u64,
+    players_number: u32,
 }
 
 
@@ -124,7 +125,8 @@ mod tests {
     fn game_settings_test() {
         let id = 1;
         let cool_down = 60;
-        let settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down};
+        let Players_number = 1;
+        let settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down, players_number: Players_number,};
         assert(settings.game_settings_id == 1, 'id is not 1');
     }
 

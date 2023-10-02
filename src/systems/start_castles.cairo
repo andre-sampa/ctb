@@ -11,7 +11,7 @@ mod initialize_castles {
         '----START CASTLES FUNCTION----'.print();
         let south_castle = Castle {name: 'south', HP: 100};
         let north_castle = Castle {name: 'north', HP: 100};
-    
+        '---CONGRATS, THE GAME IS ON!---'.print();
     }
 }
 

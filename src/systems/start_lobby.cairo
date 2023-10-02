@@ -1,31 +1,38 @@
 // START LOBBY AND WAIT FOR PLAYERS
 #[system]
 mod start_lobby {
+    use array::ArrayTrait;
     use debug::PrintTrait;
     use dojo::world::Context;
     use starknet::ContractAddress;
-    use ctb_dojo::components::{Castle, Player, Lobby};
+    use ctb_dojo::components::{Castle, Player, Lobby, GameSettings};
     use ctb_dojo::systems::start_castles::initialize_castles::start_castles;
+    use ctb_dojo::systems::random::random_system::random;
 
 
-fn start_lobby() {
+fn start_lobby(game_settings: GameSettings) {
+    // CREATE LOBBY STRUCT 
+    '---START LOBBY FUNCTION---'.print();
     let mut lobby = Lobby {id: 1, name: 'lobby1', ready: false};
     assert(lobby.id == 1, 'wrong lobby id');
-    '---START LOBBY FUNCTION---'.print();
-    
+    '---Checking players list'.print();
     // PLAYERS LIST ARRAY
     let mut players_list: Array<Player> = ArrayTrait::new();
+    let test_wallet = starknet::contract_address_const::<0x0>();
+    let mut test_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
+    players_list.append(test_player);
+    
 
     // CHECK PLAYER LIST LENGTH
-    // if players_list.length() = 1 {
-    //     lobby.ready = true;
-    // }
+   // let x = players_list.len();
+    if players_list.len() == game_settings.players_number {
+        lobby.ready = true;
+    }
+    else {
+        '---WAITING FOR PLAYERS----'.print();
+    }
 
-
-    //FORCE ready = true FOR DEBUG
-    lobby.ready = true;
-
-
+    // CHECK READY STATUS AND START CASTLES
     if lobby.ready == true {
         'Calling start_castle fn'.print();
         start_castles();
