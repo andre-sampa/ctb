@@ -1,3 +1,7 @@
+// castle.print() is not working
+// so we did a print function to debug
+
+
 #[system]
 mod print_castle_system {
     use debug::PrintTrait;
@@ -14,15 +18,14 @@ fn printCastle(castle:Castle,) {
     castle.HP.print();
 
 }
-
 }
+
+// PRINT CASTLE TEST 
 #[cfg(test)]
 mod tests {
-    use ctb_dojo::components::{Player, PlayerTrait};
-    use ctb_dojo::components::{Castle,};
+    use ctb_dojo::components::Castle;
+    use starknet::ContractAddress;
     use super::print_castle_system::printCastle;
-    use debug::PrintTrait;
-
     #[test]
     #[available_gas(100000)]
     fn print_castle_test() {
@@ -31,10 +34,6 @@ mod tests {
         printCastle(new_castle);
         assert(new_castle.name == 'north', 'wrong castle name');
     }
-
 }
-
-
-
 
 

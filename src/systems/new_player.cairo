@@ -18,7 +18,7 @@ fn execute(ctx: Context) {
 }
 
 
-// NEW PLAYER CREATION AND PRINT TEST:
+// PLAYER TEST - NEW PLAYER CREATION AND PRINT TEST:
 
 #[cfg(test)]
 mod tests {

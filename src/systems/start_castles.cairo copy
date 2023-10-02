@@ -1,0 +1,40 @@
+// INITIALIZE CASTLES - Start game
+
+// SOUTH CASTLE
+#[system]
+mod initiate_south_castle {
+    use dojo::world::Context;
+    use starknet::ContractAddress;
+    use ctb_dojo::components::{Castle,};
+
+
+    fn execute(ctx: Context) {
+        set!(
+            ctx.world,
+            (
+                Castle {name: 'south', HP: 100},
+            )
+        );
+        
+    }
+}
+
+// NORTH CASTLE 
+#[system]
+mod initiate_north_castle {
+    use dojo::world::Context;
+    use starknet::ContractAddress;
+    use ctb_dojo::components::{Castle,};
+
+
+    fn execute(ctx: Context) {
+        set!(
+            ctx.world,
+            (
+                Castle {name: 'north', HP: 100},
+            )
+        );
+    }
+}
+
+

@@ -3,7 +3,23 @@
 
 // IMPORT REFERENCES - Import used libraries 
 use debug::PrintTrait;
+use array::ArrayTrait;
 use starknet::ContractAddress;
+
+
+// LOBBY
+#[derive(Component, Copy, Drop, Serde, SerdeLen)]
+struct Lobby {
+    #[key]
+    id: u64,
+    name: felt252,
+    // DOJO CURRENTLY DOES NOT SUPPORT ARRAYS HERE
+    // players_list: Array<u64>,
+    ready: bool,
+
+}
+
+
 
 // CASTLE - Define Castle Attributes
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
@@ -50,9 +66,6 @@ impl PlayerTraitImpl of PlayerTrait {
     fn sharpen (ref self: Player) -> bool {
     '---!SHARPEN COMMAND---'.print();
         if self.sharp == false {
-            // Increase the attack damage by 25% 
-            let a:u64 = 25;
-            self.attack_damage = (self.attack_damage * a) / 100 ;
             'Your sword is now sharpened.'.print();
             'The blacksmith did a great job.'.print();
             'Ready for war, my Lord!'.print();

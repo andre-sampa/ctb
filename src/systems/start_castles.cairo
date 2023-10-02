@@ -1,47 +1,25 @@
-// INITIALIZE CASTLES - Start game
-
-// SOUTH CASTLE
+// INITIALIZE CASTLES - Initialize north and south castles
 #[system]
-mod initiate_south_castle {
+mod initialize_castles {
     use dojo::world::Context;
     use starknet::ContractAddress;
-    use ctb_dojo::components::{Castle,};
+    use ctb_dojo::components::{Castle};
 
 
-    fn execute(ctx: Context) {
-        set!(
-            ctx.world,
-            (
-                Castle {name: 'south', HP: 100},
-            )
-        );
-        
+    fn start_castles () {
+    
+        let south_castle = Castle {name: 'south', HP: 100};
+        let north_castle = Castle {name: 'north', HP: 100};
+    
     }
 }
 
-// NORTH CASTLE 
-#[system]
-mod initiate_north_castle {
-    use dojo::world::Context;
-    use starknet::ContractAddress;
-    use ctb_dojo::components::{Castle,};
 
-
-    fn execute(ctx: Context) {
-        set!(
-            ctx.world,
-            (
-                Castle {name: 'north', HP: 100},
-            )
-        );
-    }
-}
-
-// CASTLES TEST - Check new game integrity 
+// CASTELS TEST - CHECK NAME AND HP FOR BOTH CASTLES
 #[cfg(test)]
 mod tests {
-    use ctb_dojo::components::{Castle,};
-    // CHECK NAME AND HP FOR BOTH CASTLES
+    use ctb_dojo::components::Castle;
+    use ctb_dojo::systems::initialize_castles::start_castles;
     #[test]
     #[available_gas(100000)]
     fn castles_test() {
@@ -52,7 +30,4 @@ mod tests {
         assert(test_north.name == 'north', 'North castle name is wrong');
         assert(test_north.HP == 100, 'South HP not 100');
     }
-
-
 }
-

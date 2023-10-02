@@ -10,6 +10,8 @@ mod attack_system {
 
 // ATTACK FUNCTION - Function for attack and damage
 fn attack(player:Player, ref castle: Castle) {
+    // Increase the attack damage by 25% 
+    let sharpen_percent_increase = 25;
         // Check target castle
         if castle.name == 'north' {
             '---ATTACKING NORTH FUNCTION---'.print();
@@ -18,7 +20,7 @@ fn attack(player:Player, ref castle: Castle) {
             'Attacking north'.print();
             let mut damage:u64 = random();
                 if player.sharp == true {
-                    damage = damage + ((damage * 25) / 100);
+                    damage = damage + ((damage * sharpen_percent_increase) / 100);
                 }
             'Show attack damage'.print();
             damage.print();
@@ -30,11 +32,14 @@ fn attack(player:Player, ref castle: Castle) {
             '---ATTACKING SOUTH FUNCTION---'.print();
             'Show South HP'.print();
              castle.HP.print();
-            'Attacking north'.print();
-            let x = player.attack_damage;
+            'Attacking south'.print();
+            let mut damage:u64 = random();
+                if player.sharp == true {
+                    damage = damage + ((damage * 25) / 100);
+                }
             'Show attack damage'.print();
-            x.print();
-            castle.HP = castle.HP - x;
+            damage.print();
+            castle.HP = castle.HP - damage;
             'Show final South HP:'.print();
             castle.HP.print();
         }
@@ -43,17 +48,13 @@ fn attack(player:Player, ref castle: Castle) {
 
 }
 
-
-
-
-
-// ATTACK TEST - Creates a new player and a castle to verify attack and damage
+// ATTACK TEST - Create a new player and a castle to verify attack and damage
 #[cfg(test)]
 mod tests {
     use ctb_dojo::components::{Player, PlayerTrait};
     use ctb_dojo::components::{Castle,};
     // why we must specify each function and not just the entire mod system?
-    use super::attack_system::attack;
+    use ctb_dojo::systems::attack::attack_system::attack;
     use debug::PrintTrait;
     use ctb_dojo::systems::print_castle::print_castle_system::printCastle;
     use ctb_dojo::systems::random::random_system::random;
@@ -81,7 +82,8 @@ mod tests {
         assert(south_castle.HP < 100, 'no damage');
     }
 
- #[test]
+    // RANDOM FUNCTION TEST
+    #[test]
     #[available_gas(100000)]
     fn random_function_test() {
         '----RANDOM FUNCTION TEST----'.print();
@@ -92,8 +94,4 @@ mod tests {
         assert(x > 0 , 'x is 0');
     }
 }
-
-
-
-
 

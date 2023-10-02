@@ -1,3 +1,6 @@
+// player.print() is not working
+// so we did a print function to debug
+
 #[system]
 mod print_player_system {
     use debug::PrintTrait;
@@ -20,12 +23,13 @@ fn printPlayer(player:Player,) {
         player.attack_damage.print();
 }
 }
+
+// PRINT PLAYER TEST
 #[cfg(test)]
 mod tests {
-    use ctb_dojo::components::{Player, PlayerTrait};
-    use ctb_dojo::components::{Castle,};
+    use ctb_dojo::components::{Castle, Player};
+    use starknet::ContractAddress;
     use super::print_player_system::printPlayer;
-    use debug::PrintTrait;
 
     #[test]
     #[available_gas(100000)]
@@ -36,8 +40,8 @@ mod tests {
         printPlayer(new_player);
         assert(new_player.name == 'Andre', 'wrong player name');
     }
-
 }
+
 
 
 
