@@ -75,7 +75,6 @@ impl PlayerTraitImpl of PlayerTrait {
             else {
                 let message: felt252 = 'Your sword is already sharpened'; // if we add one more character we get felt252 error, check it out later
                 message.print(); 
-                self.sharp = false;
                 return (self.sharp);
             
             }
