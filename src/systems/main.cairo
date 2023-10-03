@@ -12,7 +12,7 @@ mod main_system {
 
 fn main() {
     '---MAIN---'.print();
-    // GAME SETTINGS 
+    // GAME SETTINGS
     '---Define Game Settings---'.print();
     let id: u64 = random();
     let cool_down:u64 = 60; 
@@ -21,7 +21,7 @@ fn main() {
     assert(game_settings.combat_cool_down == 60, 'cooldown setting error');
 
     // HOW DO WE CALL A SYSTEM IF WE LET EXECUTE FUNCTION?
-    // THIS ONE IS WORKING BC WE GAVE THE FUNCTION A DIFFERENT NAME
+    // THIS ONE IS WORKING BECAUSE WE GAVE THE FUNCTION A DIFFERENT NAME
     'Calling start_lobby fn'.print();
     start_lobby(game_settings);
 
