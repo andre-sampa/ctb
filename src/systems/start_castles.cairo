@@ -3,7 +3,7 @@
 mod initialize_castles {
     use dojo::world::Context;
     use starknet::ContractAddress;
-    use ctb_dojo::components::{Player, Castle};
+    use ctb_dojo::components::{Player, Castle, PlayerTrait};
     use debug::PrintTrait;
     use ctb_dojo::systems::print_castle::print_castle_system::printCastle;
     use ctb_dojo::systems::attack::attack_system::attack;
@@ -19,8 +19,10 @@ mod initialize_castles {
         '---CONGRATS, THE GAME IS ON!---'.print();
 
         '---ATTACK TEST!---'.print();
+        '---calling sharpen function---'.print();
         let test_wallet = starknet::contract_address_const::<0x0>();
         let mut test_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
+        test_player.sharpen();
         attack (test_player, ref south_castle);
     }
 }

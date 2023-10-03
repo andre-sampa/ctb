@@ -64,7 +64,7 @@ trait PlayerTrait {
 
 impl PlayerTraitImpl of PlayerTrait {
     fn sharpen (ref self: Player) -> bool {
-    '---!SHARPEN COMMAND---'.print();
+    '---!sharpen FUNCTION---'.print();
         if self.sharp == false {
             'Your sword is now sharpened.'.print();
             'The blacksmith did a great job.'.print();
