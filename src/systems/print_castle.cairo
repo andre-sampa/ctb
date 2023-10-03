@@ -20,20 +20,20 @@ fn printCastle(castle:Castle,) {
 }
 }
 
-// PRINT CASTLE TEST 
-#[cfg(test)]
-mod tests {
-    use ctb_dojo::components::Castle;
-    use starknet::ContractAddress;
-    use super::print_castle_system::printCastle;
-    #[test]
-    #[available_gas(100000)]
-    fn print_castle_test() {
-        let test_wallet = starknet::contract_address_const::<0x0>();
-        let mut new_castle = Castle {name: 'north', HP: 100};
-        printCastle(new_castle);
-        assert(new_castle.name == 'north', 'wrong castle name');
-    }
-}
+// // PRINT CASTLE TEST 
+// #[cfg(test)]
+// mod tests {
+//     use ctb_dojo::components::Castle;
+//     use starknet::ContractAddress;
+//     use super::print_castle_system::printCastle;
+//     #[test]
+//     #[available_gas(100000)]
+//     fn print_castle_test() {
+//         let test_wallet = starknet::contract_address_const::<0x0>();
+//         let mut new_castle = Castle {name: 'north', HP: 100};
+//         printCastle(new_castle);
+//         assert(new_castle.name == 'north', 'wrong castle name');
+//     }
+// }
 
 

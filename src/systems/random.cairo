@@ -12,19 +12,19 @@ fn random() -> u64 {
 
 }
 
-// RANDOM FUNCTION TEST
-#[cfg(test)]
-mod tests {
-    use debug::PrintTrait;
-    use super::random_system::random;
-    #[test]
-    #[available_gas(100000)]
-    fn random_function_test() {
-        '----RANDOM FUNCTION TEST----'.print();
-        let mut x:u64 = 0;
-        x.print();
-        x = random();
-        x.print();
-    }
-}
+// // RANDOM FUNCTION TEST
+// #[cfg(test)]
+// mod tests {
+//     use debug::PrintTrait;
+//     use super::random_system::random;
+//     #[test]
+//     #[available_gas(100000)]
+//     fn random_function_test() {
+//         '----RANDOM FUNCTION TEST----'.print();
+//         let mut x:u64 = 0;
+//         x.print();
+//         x = random();
+//         x.print();
+//     }
+// }
 

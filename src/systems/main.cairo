@@ -14,6 +14,7 @@ fn main() {
     '---MAIN---'.print();
     // GAME SETTINGS
     '---Define Game Settings---'.print();
+    '---Calling random fn for id---'.print();
     let id: u64 = random();
     let cool_down:u64 = 60; 
     let Players_number:u32 = 1;
@@ -22,7 +23,7 @@ fn main() {
 
     // HOW DO WE CALL A SYSTEM IF WE LET EXECUTE FUNCTION?
     // THIS ONE IS WORKING BECAUSE WE GAVE THE FUNCTION A DIFFERENT NAME
-    'Calling start_lobby fn'.print();
+    '---Calling start_lobby fn---'.print();
     start_lobby(game_settings);
 
     }

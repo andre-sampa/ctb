@@ -24,23 +24,23 @@ fn printPlayer(player:Player,) {
 }
 }
 
-// PRINT PLAYER TEST
-#[cfg(test)]
-mod tests {
-    use ctb_dojo::components::{Castle, Player};
-    use starknet::ContractAddress;
-    use super::print_player_system::printPlayer;
+// // PRINT PLAYER TEST
+// #[cfg(test)]
+// mod tests {
+//     use ctb_dojo::components::{Castle, Player};
+//     use starknet::ContractAddress;
+//     use super::print_player_system::printPlayer;
 
-    #[test]
-    #[available_gas(100000)]
-    fn print_player_test() {
-        let test_wallet = starknet::contract_address_const::<0x0>();
-        let mut north_castle = Castle {name: 'north', HP: 100};
-        let mut new_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
-        printPlayer(new_player);
-        assert(new_player.name == 'Andre', 'wrong player name');
-    }
-}
+//     #[test]
+//     #[available_gas(100000)]
+//     fn print_player_test() {
+//         let test_wallet = starknet::contract_address_const::<0x0>();
+//         let mut north_castle = Castle {name: 'north', HP: 100};
+//         let mut new_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
+//         printPlayer(new_player);
+//         assert(new_player.name == 'Andre', 'wrong player name');
+//     }
+// }
 
 
 

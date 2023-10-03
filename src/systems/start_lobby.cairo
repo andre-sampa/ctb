@@ -15,7 +15,7 @@ fn start_lobby(game_settings: GameSettings) {
     '---START LOBBY FUNCTION---'.print();
     let mut lobby = Lobby {id: 1, name: 'lobby1', ready: false};
     assert(lobby.id == 1, 'wrong lobby id');
-    '---Checking players list'.print();
+    '---Checking players list---'.print();
     // PLAYERS LIST ARRAY
     let mut players_list: Array<Player> = ArrayTrait::new();
     let test_wallet = starknet::contract_address_const::<0x0>();
@@ -26,15 +26,18 @@ fn start_lobby(game_settings: GameSettings) {
     // CHECK PLAYER LIST LENGTH
    // let x = players_list.len();
     if players_list.len() == game_settings.players_number {
+        '---Lobby ready---'.print();
+        '---STARTING GAME!---'.print();
         lobby.ready = true;
     }
     else {
         '---WAITING FOR PLAYERS----'.print();
+        '---LOBBY IS NOT READY---'.print()
     }
 
     // CHECK READY STATUS AND START CASTLES
     if lobby.ready == true {
-        'Calling start_castle fn'.print();
+        '---Calling start_castle fn---'.print();
         start_castles();
     }
 

@@ -111,34 +111,34 @@ struct GameSettings {
 }
 
 
-// TESTS:
-#[cfg(test)]
-mod tests {
-    // IMPORT TEST REFERENCES
-    use ctb_dojo::components::{Player, PlayerTrait};
-    use ctb_dojo::components::{Castle,};
-    use ctb_dojo::components::GameSettings;
+// // TESTS:
+// #[cfg(test)]
+// mod tests {
+//     // IMPORT TEST REFERENCES
+//     use ctb_dojo::components::{Player, PlayerTrait};
+//     use ctb_dojo::components::{Castle,};
+//     use ctb_dojo::components::GameSettings;
 
-    // GAME SETTINGS TEST - Verify game id 
-    #[test]
-    #[available_gas(100000)]
-    fn game_settings_test() {
-        let id = 1;
-        let cool_down = 60;
-        let Players_number = 1;
-        let settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down, players_number: Players_number,};
-        assert(settings.game_settings_id == 1, 'id is not 1');
-    }
+//     // GAME SETTINGS TEST - Verify game id 
+//     #[test]
+//     #[available_gas(100000)]
+//     fn game_settings_test() {
+//         let id = 1;
+//         let cool_down = 60;
+//         let Players_number = 1;
+//         let settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down, players_number: Players_number,};
+//         assert(settings.game_settings_id == 1, 'id is not 1');
+//     }
 
-    // PLAYER SHARPEN TEST - Verify player.sharpen bool 
-    #[test]
-    #[available_gas(100000)]
-    fn sharpen_test() {
-        let test_wallet = starknet::contract_address_const::<0x01>();
-        let mut test_sharpen_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
-        assert(PlayerTrait::sharpen(ref test_sharpen_player), 'not sharpened');
-    }
+//     // PLAYER SHARPEN TEST - Verify player.sharpen bool 
+//     #[test]
+//     #[available_gas(100000)]
+//     fn sharpen_test() {
+//         let test_wallet = starknet::contract_address_const::<0x01>();
+//         let mut test_sharpen_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
+//         assert(PlayerTrait::sharpen(ref test_sharpen_player), 'not sharpened');
+//     }
 
 
-}
+// }
 

@@ -3,15 +3,25 @@
 mod initialize_castles {
     use dojo::world::Context;
     use starknet::ContractAddress;
-    use ctb_dojo::components::{Castle};
+    use ctb_dojo::components::{Player, Castle};
     use debug::PrintTrait;
+    use ctb_dojo::systems::print_castle::print_castle_system::printCastle;
+    use ctb_dojo::systems::attack::attack_system::attack;
 
 
     fn start_castles () {
         '----START CASTLES FUNCTION----'.print();
-        let south_castle = Castle {name: 'south', HP: 100};
-        let north_castle = Castle {name: 'north', HP: 100};
+        let mut south_castle = Castle {name: 'south', HP: 100};
+        let mut north_castle = Castle {name: 'north', HP: 100};
+        printCastle(south_castle);
+        printCastle(north_castle);
+
         '---CONGRATS, THE GAME IS ON!---'.print();
+
+        '---ATTACK TEST!---'.print();
+        let test_wallet = starknet::contract_address_const::<0x0>();
+        let mut test_player = Player {enrolled: true, name: 'Andre' , wallet: test_wallet, sharp: false, attack_damage: 10,};
+        attack (test_player, ref south_castle);
     }
 }
 
