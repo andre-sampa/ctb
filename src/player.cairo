@@ -63,8 +63,9 @@ impl PlayerFunctions of PlayerTrait {
 
   
 // PRINT PLAYER IMPLEMENTATION - Implement a player print to PrintTrait<>
-// CHECK WHY WE CAN'T MAKE player.print() to work on tests
-// // CHECK WHY WE MUST CHANGE NAME, A BUG SAYS PlayerPrintImpl IS DEFINED MULTIPLE TIMES
+// CHECK WHY WE CAN'T MAKE player.print() to work 
+// WHY WE MUST CHANGE NAME? A BUG SAYS PlayerPrintImpl IS DEFINED MULTIPLE TIMES
+// IS PRINT ALREADY IMPLEMENTED? 
 
 // impl PlayerPrintImpl_AAA of PrintTrait<Player> {
 //     fn print_player(self: Player) {

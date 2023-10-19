@@ -63,7 +63,7 @@ mod tests {
     use ctb_dojo::game_settings::GameSettings;
 
     #[test]
-    #[available_gas(100000)]
+    #[available_gas(200000)]
     fn start_lobby_test () {
         let id = 1;
         let cool_down = 60;

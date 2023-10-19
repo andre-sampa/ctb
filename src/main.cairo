@@ -16,7 +16,7 @@ fn main() {
     // GAME SETTINGS
     '---Define Game Settings---'.print();
     '---Calling random fn for id---'.print();
-    let id: u64 = random::Random();
+    let id: u64 = random::Random(5);
     let cool_down:u64 = 60; 
     let Players_number:u32 = 1;
     let game_settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down, players_number: Players_number, };
@@ -36,7 +36,7 @@ mod tests {
     use ctb_dojo::main::main_system::main;
 
     #[test]
-    #[available_gas(100000)]
+    #[available_gas(200000)]
     fn main_test () {
         main();
     }

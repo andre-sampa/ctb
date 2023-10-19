@@ -10,3 +10,4 @@ mod random;
 mod lobby;
 mod main;
 mod temp_test;
+mod game_entropy;

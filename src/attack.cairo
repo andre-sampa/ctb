@@ -11,7 +11,7 @@ mod attack_system {
 
 // ATTACK FUNCTION - Function for attack and damage
 fn attack(player:Player, ref castle: Castle) {
-    // Increase the attack damage by 25% 
+    // Eventual sharpen damage % increase
     let sharpen_percent_increase = 25;
         // Check target castle
         if castle.name == 'north' {
@@ -19,7 +19,7 @@ fn attack(player:Player, ref castle: Castle) {
             'Show North HP'.print();
              castle.HP.print();
             'Attacking north'.print();
-            let mut damage:u64 = random::Random();
+            let mut damage:u64 = random::Random(5);
                 if player.sharp == true {
                     damage = damage + ((damage * sharpen_percent_increase) / 100);
                 }
@@ -34,7 +34,7 @@ fn attack(player:Player, ref castle: Castle) {
             'Show South HP'.print();
              castle.HP.print();
             'Attacking south'.print();
-            let mut damage:u64 = random::Random();
+            let mut damage:u64 = random::Random(5);
                 if player.sharp == true {
                     damage = damage + ((damage * 25) / 100);
                 }
@@ -90,7 +90,7 @@ mod tests {
         '----RANDOM FUNCTION TEST----'.print();
         let mut x:u64 = 0;
         x.print();
-        x = random::Random();
+        x = random::Random(5);
         x.print();
         assert(x > 0 , 'x is 0');
     }
