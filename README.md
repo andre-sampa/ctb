@@ -16,13 +16,15 @@
 [tg-badge]: https://img.shields.io/endpoint?color=neon&logo=telegram&label=chat&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fdojoengine
 [tg-url]: https://t.me/dojoengine
 
-# BANNERS - Ctb on chain!
+# BANNERS - Ctb on chain
 
 Call the Banners game on Starknet. First approach to Cairo and Realms AW integration.
 
 Read the full tutorial [here](https://book.dojoengine.org/cairo/hello-dojo.html)
 
 ---
+
+<img align="center" width=100% src=https://ibb.co/m627vzT>
 
 ## Contribution
 
