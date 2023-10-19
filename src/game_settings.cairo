@@ -3,7 +3,11 @@ use array::ArrayTrait;
 use starknet::ContractAddress;
 
 
-// GAME SETTINGS - Define starting game variables
+/// @title - GAME SETTINGS
+/// @notice - Define starting game variables
+/// @dev - 
+/// @param - 
+/// @return - 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct GameSettings {
     #[key]

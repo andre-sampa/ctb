@@ -3,7 +3,7 @@ use array::ArrayTrait;
 use starknet::ContractAddress;
 
 
-// PLAYER - Define Player attributes
+/// PLAYER - Define Player attributes
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct Player {
     #[key]
@@ -15,9 +15,13 @@ struct Player {
 }
 
 
-// SHARPEN FUNCTION - Define a Player Trait for '!sharpen' command 
 #[generate_trait]
 impl PlayerFunctions of PlayerTrait {
+    /// @title SHARPEN FUNCTION
+    /// @notice - Define a Player Trait for '!sharpen' command 
+    /// @dev - Check why we can't add a character on message variable. (felt252 size)
+    /// @param - Self: Player method (player.method())
+    /// @return - Bool value of player's sharpen.
     fn sharpen (ref self: Player) -> bool {
     '---!sharpen FUNCTION---'.print();
         if self.sharp == false {
@@ -35,6 +39,11 @@ impl PlayerFunctions of PlayerTrait {
             }
         }
     
+    /// @title NEW PLAYER FUNCTION
+    /// @notice - Creates a new player instance
+    /// @dev - 
+    /// @param - name: Name wallet: Wallet
+    /// @return - A Player struct initialized with default and provided values.
     fn new (name: felt252, wallet: ContractAddress) -> Player {
         let test_player = Player {
             enrolled: true, 

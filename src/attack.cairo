@@ -9,7 +9,11 @@ mod attack_system {
     use ctb_dojo::random;
 
 
-// ATTACK FUNCTION - Function for attack and damage
+/// @title - ATTACK FUNCTION
+/// @notice - Function for attack and damage
+/// @dev - The function checks if sharpen is true and increase damage eventualy. 
+/// @param - Player, Castle
+/// @return - none
 fn attack(player:Player, ref castle: Castle) {
     // Eventual sharpen damage % increase
     let sharpen_percent_increase = 25;

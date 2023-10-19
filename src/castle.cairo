@@ -14,12 +14,18 @@ struct Castle {
     HP: u64,
 }
 
-// PRINT CASTLE IMPLEMENTATION - Implement a Castle print to PrintTrait<>
+/// -----LEARNING NOTE------
 // CHECK WHY WE CAN'T MAKE player.print() and castle.print() to work
+// PRINT CASTLE IMPLEMENTATION - Implement a Castle print to PrintTrait<>
 // CHECK WHY WE MUST CHANGE NAME, A BUG SAYS PlayerCastleImpl IS DEFINED MULTIPLE TIMES
 
 #[generate_trait]
 impl CastleFunctions of CastleTrait {
+    /// @title - PRINT CASTLE
+    /// @notice - Print a castle and it's properties
+    /// @dev - Usefull for debug
+    /// @param - Castle's method (Castle.print_castle())
+    /// @return - none
     fn print_castle(self: Castle) {
         '---PRINTING CASTEL---'.print();
         'NAME:'.print();
@@ -28,6 +34,11 @@ impl CastleFunctions of CastleTrait {
         self.HP.print();
     }
 
+    /// @title - START CASTLES
+    /// @notice - Initialize two castles, North and South
+    /// @dev - Simulating an attack after castles are initialized
+    /// @param - none
+    /// @return - none
     fn start_castles () {
         '----START CASTLES FUNCTION----'.print();
         let mut south_castle = Castle {name: 'south', HP: 100};
@@ -57,7 +68,6 @@ mod tests {
     use ctb_dojo::castle::{Castle, CastleFunctions};
     use debug::PrintTrait;
 
-    // PLAYER SHARPEN TEST - Verify player.sharpen bool 
     #[test]
     #[available_gas(100000)]
     fn castle_test() {
@@ -69,7 +79,6 @@ mod tests {
         let test_north = Castle {name: 'north', HP: 100};
         assert(test_north.name == 'north', 'North castle name is wrong');
         assert(test_north.HP == 100, 'South HP not 100');
-        // CastleFunctions::start_castles();
 
 
     }

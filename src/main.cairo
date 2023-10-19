@@ -11,6 +11,10 @@ mod main_system {
     use debug::PrintTrait;
 
 
+/// @title - MAIN FUNCTION
+/// @notice - This function sets a game and start a lobby;
+/// @dev - start_lobby will call start_castles that will simulate 
+/// a complete attack round with sharp and attack command.
 fn main() {
     '---MAIN---'.print();
     // GAME SETTINGS
