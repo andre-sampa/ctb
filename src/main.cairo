@@ -1,7 +1,6 @@
 // MAIN START
 #[system]
 mod main_system {
-    use dojo::world::Context;
     use starknet::ContractAddress;
     use ctb_dojo::player::{Player, PlayerFunctions};
     use ctb_dojo::castle::{Castle, CastleFunctions};

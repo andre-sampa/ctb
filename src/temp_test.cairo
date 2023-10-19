@@ -1,7 +1,6 @@
 #[system]
 mod test_system {
-    use dojo::world::Context;
-    fn execute(ctx: Context) {
+    fn execute() {
        let x = 4;
         
     }

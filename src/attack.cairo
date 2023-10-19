@@ -2,7 +2,6 @@
 #[system]
 mod attack_system {
     use debug::PrintTrait;
-    use dojo::world::Context;
     use starknet::ContractAddress;
     use ctb_dojo::player::Player;
     use ctb_dojo::castle::Castle;
