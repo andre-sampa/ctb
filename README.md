@@ -24,7 +24,7 @@ Read the full tutorial [here](https://book.dojoengine.org/cairo/hello-dojo.html)
 
 ---
 
-<img align="center" width=100% src=https://ibb.co/m627vzT>
+<img align="center" width=100% src=https://i.ibb.co/Fgyts73/Screenshot-2023-10-19-at-20-33-13.png>
 
 ## Contribution
 
