@@ -1,5 +1,3 @@
-use debug::PrintTrait;
-
 //  - Not Ready, still pseudo random. 
 // Maybe we can pass some variable from game_entropy as entropy
 
@@ -8,6 +6,10 @@ use debug::PrintTrait;
 /// @dev - an entropy given as parameter will return different 'random' numbers
 /// @param - entropy number
 /// @return - A number between 0 and 100 
+
+use debug::PrintTrait;
+
+
 fn Random(entropy:u64) -> u64 {
     '---RANDOM FUNCTION---'.print();
     let a = 1664525;

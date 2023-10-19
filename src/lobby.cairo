@@ -5,7 +5,6 @@ use ctb_dojo::game_settings::GameSettings;
 use ctb_dojo::player::{Player, PlayerFunctions};
 use ctb_dojo::castle::{Castle, CastleFunctions};
 
-
 // LOBBY
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct Lobby {
@@ -25,7 +24,7 @@ impl LobbyFunctions of LobbyTrait {
     /// @dev - It will check for players list lenght and set lobby as ready when 
     /// players number is achieved. 
     /// @param - GameSettings
-    /// @return - 
+    /// @return - none
     fn start_lobby(game_settings: GameSettings) {
     // CREATE LOBBY STRUCT 
     '---START LOBBY FUNCTION---'.print();

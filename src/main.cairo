@@ -9,7 +9,6 @@ mod main_system {
     use ctb_dojo::random;
     use debug::PrintTrait;
 
-
 /// @title - MAIN FUNCTION
 /// @notice - This function sets a game and start a lobby;
 /// @dev - start_lobby will call start_castles that will simulate 

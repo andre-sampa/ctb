@@ -1,4 +1,4 @@
-// ATTACK_SYSTEM
+/// ATTACK_SYSTEM
 #[system]
 mod attack_system {
     use debug::PrintTrait;

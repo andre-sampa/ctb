@@ -6,7 +6,7 @@ use ctb_dojo::attack::attack_system;
 
 
 
-// CASTLE - Define Castle Attributes
+/// CASTLE - Define Castle Attributes
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct Castle {
     #[key]

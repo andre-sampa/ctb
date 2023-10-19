@@ -2,7 +2,6 @@ use debug::PrintTrait;
 use array::ArrayTrait;
 use starknet::ContractAddress;
 
-
 /// PLAYER - Define Player attributes
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct Player {
@@ -13,7 +12,6 @@ struct Player {
     sharp: bool,
     coins: u64,
 }
-
 
 #[generate_trait]
 impl PlayerFunctions of PlayerTrait {

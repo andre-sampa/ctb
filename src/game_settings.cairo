@@ -2,7 +2,6 @@ use debug::PrintTrait;
 use array::ArrayTrait;
 use starknet::ContractAddress;
 
-
 /// @title - GAME SETTINGS
 /// @notice - Define starting game variables
 /// @dev - 

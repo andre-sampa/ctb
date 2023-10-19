@@ -2,7 +2,7 @@
 /// @notice - I fixed the paths and it's passing all tests.
 /// We just need to find a way to connect it with the world contract later. 
 /// @dev - Check random.cairo for a temporally pseudo random function in the meanwhile.
-
+ 
 use poseidon::poseidon_hash_span;
 use starknet::{StorePacking};
 use super::constants;
@@ -317,4 +317,5 @@ mod tests {
             'wrong next_update_block zero'
         );
     }
+
 }
