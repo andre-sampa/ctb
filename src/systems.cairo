@@ -1,14 +1,3 @@
-mod attack;
-mod new_player;
-mod start_castles;
-mod temp_test;
-mod print_player;
-mod print_castle;
-mod random;
-mod start_lobby;
-mod main;
-
-
 // WHY CHESS EXAMPLE WAS IMPORTING USE? NOT SURE I GET IT, SEEMS WE DON'T NEED IT
 
 // use attack::attack_system;

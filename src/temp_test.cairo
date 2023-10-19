@@ -12,24 +12,12 @@ mod test_system {
 
 // #[cfg(test)]
 // mod test_tmp {
-//     use ctb_dojo::test_system;
+//     use ctb_dojo::temp_test::test_system;
 //     #[test]
 //     #[available_gas(100000)]
 //     fn temp_test2() {
-//         assert(x == 4, 'its not 4');
+//         assert(test_system::execute::x == 4, 'its not 4');
         
 
-//     }
-// }
-
-
-// #[cfg(test)]
-// mod tests {
-//     use super::test_system;
-//     #[test]
-//     #[available_gas(100000)]
-//     fn temp_test() {
-//         let x = 2;
-//         assert(x == 2, 'its not 2');
 //     }
 // }

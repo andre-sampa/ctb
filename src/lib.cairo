@@ -1,5 +1,12 @@
-mod components;
-mod systems;
-mod tests;
+// mod components;
+// mod systems;
 mod constants;
 mod events;
+mod player;
+mod castle;
+mod game_settings;
+mod attack;
+mod random;
+mod lobby;
+mod main;
+mod temp_test;
