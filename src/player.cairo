@@ -3,7 +3,7 @@ use array::ArrayTrait;
 use starknet::ContractAddress;
 
 /// PLAYER - Define Player attributes
-#[derive(Component, Copy, Drop, Serde, SerdeLen)]
+#[derive(Model, Copy, Drop, Serde, SerdeLen)]
 struct Player {
     #[key]
     enrolled: bool,

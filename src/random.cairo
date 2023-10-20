@@ -4,11 +4,10 @@
 /// @title - RANDOM FUNCTION
 /// @notice - Pseudo random generator
 /// @dev - an entropy given as parameter will return different 'random' numbers
-/// @param - entropy number
+/// @param - entropy number --- THE GOAL IS TO SEND A VARIABLE FROM game_entropy IN THE FUTURE
 /// @return - A number between 0 and 100 
 
 use debug::PrintTrait;
-
 
 fn Random(entropy:u64) -> u64 {
     '---RANDOM FUNCTION---'.print();

@@ -6,7 +6,7 @@ use ctb_dojo::player::{Player, PlayerFunctions};
 use ctb_dojo::castle::{Castle, CastleFunctions};
 
 // LOBBY
-#[derive(Component, Copy, Drop, Serde, SerdeLen)]
+#[derive(Model, Copy, Drop, Serde, SerdeLen)]
 struct Lobby {
     #[key]
     id: u64,

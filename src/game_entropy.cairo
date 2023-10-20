@@ -1,8 +1,9 @@
 /// @title - LOOT SURVIVOR RANDOMNESS RESEARCH 
-/// @notice - I fixed the paths and it's passing all tests.
-/// We just need to find a way to connect it with the world contract later. 
-/// @dev - Check random.cairo for a temporally pseudo random function in the meanwhile.
- 
+/// @notice - Copy/Paste I just changed the paths and it's passing all tests.
+/// We probably just need to connect it with the world contract to gather real data.
+/// We can then send some variable from here as entropy parameter for the random::Random function
+/// @dev - last updated block / time , next update block
+
 use poseidon::poseidon_hash_span;
 use starknet::{StorePacking};
 use super::constants;

@@ -2,12 +2,12 @@ use debug::PrintTrait;
 use array::ArrayTrait;
 use starknet::ContractAddress;
 use ctb_dojo::player::{Player, PlayerFunctions};
-use ctb_dojo::attack::attack_system;
+use ctb_dojo::combat::combat_system;
 
 
 
 /// CASTLE - Define Castle Attributes
-#[derive(Component, Copy, Drop, Serde, SerdeLen)]
+#[derive(Model, Copy, Drop, Serde, SerdeLen)]
 struct Castle {
     #[key]
     name: felt252,
@@ -53,7 +53,7 @@ impl CastleFunctions of CastleTrait {
         let test_wallet = starknet::contract_address_const::<0x0>();
         let mut test_player = PlayerFunctions::new ('Andre', test_wallet);
         test_player.sharpen();
-        attack_system::attack (test_player, ref south_castle);
+        combat_system::attack (test_player, ref south_castle);
     }
 }
 

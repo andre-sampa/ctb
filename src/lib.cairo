@@ -5,7 +5,7 @@ mod events;
 mod player;
 mod castle;
 mod game_settings;
-mod attack;
+mod combat;
 mod random;
 mod lobby;
 mod main;

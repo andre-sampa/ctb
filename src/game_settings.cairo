@@ -7,7 +7,7 @@ use starknet::ContractAddress;
 /// @dev - 
 /// @param - 
 /// @return - 
-#[derive(Component, Copy, Drop, Serde, SerdeLen)]
+#[derive(Model, Copy, Drop, Serde, SerdeLen)]
 struct GameSettings {
     #[key]
     game_settings_id: u64,
