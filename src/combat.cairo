@@ -1,6 +1,6 @@
-/// @title - COMBAT SYSTEM
-/// @notice - Functions for combat dynamics 
-/// @dev - attack, parry, duel, loot 
+/// @title: COMBAT SYSTEM
+/// @notice: Functions for combat dynamics 
+/// @dev: attack, parry, duel, loot 
 
 #[system]
 mod combat_system {
@@ -10,15 +10,16 @@ mod combat_system {
     use ctb_dojo::castle::Castle;
     use ctb_dojo::random;
 
-    /// @title - ATTACK FUNCTION
-    /// @notice - Function for attack and damage
-    /// @dev - The function checks if sharpen is true and increase damage eventualy. 
-    /// @param - Player, Castle
-    /// @return - none
+    /// @title: ATTACK FUNCTION
+    /// @notice: Function for attack and damage
+    /// @dev: The function checks the target castle and inflicts the damage
+    /// if sharpen is true it increases the damage value. 
+    /// @param: Player, the attacking player 
+    /// @param: Castle, the target castle
+    /// @return: none
     fn attack(player:Player, ref castle: Castle) {
         // Eventual sharpen damage % increase
         let sharpen_percent_increase = 25;
-            // Check target castle
             if castle.name == 'north' {
                 '---ATTACKING NORTH FUNCTION---'.print();
                 'Show North HP'.print();
@@ -69,7 +70,9 @@ mod combat_system {
 }
 
 
-
+// ---------------------------
+// ---------- Tests ----------
+// ---------------------------
 // ATTACK TEST - Create a new player and a castle to verify attack and damage
 #[cfg(test)]
 mod tests {

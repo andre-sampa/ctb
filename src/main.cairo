@@ -9,9 +9,9 @@ mod main_system {
     use ctb_dojo::random;
     use debug::PrintTrait;
 
-/// @title - MAIN FUNCTION
-/// @notice - This function sets a game and start a lobby;
-/// @dev - start_lobby will call start_castles that will simulate 
+/// @title: MAIN FUNCTION
+/// @notice: This function sets a game and start a lobby;
+/// @dev: start_lobby will call start_castles that will simulate 
 /// a complete attack round with sharp and attack command.
 fn main() {
     '---MAIN---'.print();
@@ -32,6 +32,9 @@ fn main() {
     }
 }
 
+// ---------------------------
+// ---------- Tests ----------
+// ---------------------------
 // MAIN TEST - main() will call start_lobby() that will call start_castles()
 #[cfg(test)]
 mod tests {

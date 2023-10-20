@@ -5,7 +5,6 @@ use ctb_dojo::player::{Player, PlayerFunctions};
 use ctb_dojo::combat::combat_system;
 
 
-
 /// CASTLE - Define Castle Attributes
 #[derive(Model, Copy, Drop, Serde, SerdeLen)]
 struct Castle {
@@ -21,24 +20,24 @@ struct Castle {
 
 #[generate_trait]
 impl CastleFunctions of CastleTrait {
-    /// @title - PRINT CASTLE
-    /// @notice - Print a castle and it's properties
-    /// @dev - Usefull for debug
-    /// @param - Castle's method (Castle.print_castle())
-    /// @return - none
+    /// @title: PRINT CASTLE
+    /// @notice: Print a castle and it's properties
+    /// @dev: Usefull for debug
+    /// @param: Castle's method (Castle.print_castle())
+    /// @return: none
     fn print_castle(self: Castle) {
-        '---PRINTING CASTEL---'.print();
+        '---PRINTING CASTLE---'.print();
         'NAME:'.print();
         self.name.print();
         'HP:'.print();
         self.HP.print();
     }
 
-    /// @title - START CASTLES
-    /// @notice - Initialize two castles, North and South
-    /// @dev - Simulating an attack after castles are initialized
-    /// @param - none
-    /// @return - none
+    /// @title: START CASTLES
+    /// @notice: Initialize two castles, North and South
+    /// @dev: Simulates an attack after castles are initialized
+    /// @param: none
+    /// @return: none
     fn start_castles () {
         '----START CASTLES FUNCTION----'.print();
         let mut south_castle = Castle {name: 'south', HP: 100};
@@ -58,10 +57,9 @@ impl CastleFunctions of CastleTrait {
 }
 
 
-
-
-
-// TESTS:
+// ---------------------------
+// ---------- Tests ----------
+// ---------------------------
 #[cfg(test)]
 mod tests {
 

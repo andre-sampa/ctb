@@ -1,8 +1,8 @@
-/// @title - LOOT SURVIVOR RANDOMNESS RESEARCH 
-/// @notice - Copy/Paste I just changed the paths and it's passing all tests.
+/// @title: LOOT SURVIVOR RANDOMNESS RESEARCH 
+/// @notice: Copy/Paste I just changed the paths and it's passing all tests.
 /// We probably just need to connect it with the world contract to gather real data.
 /// We can then send some variable from here as entropy parameter for the random::Random function
-/// @dev - last updated block / time , next update block
+/// @dev: last updated block / time , next update block
 
 use poseidon::poseidon_hash_span;
 use starknet::{StorePacking};

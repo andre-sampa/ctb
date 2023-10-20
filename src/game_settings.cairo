@@ -2,11 +2,9 @@ use debug::PrintTrait;
 use array::ArrayTrait;
 use starknet::ContractAddress;
 
-/// @title - GAME SETTINGS
-/// @notice - Define starting game variables
-/// @dev - 
-/// @param - 
-/// @return - 
+/// @title: GAME SETTINGS
+/// @notice: Define starting game variables
+/// @dev: id, combat cooldown, number of players
 #[derive(Model, Copy, Drop, Serde, SerdeLen)]
 struct GameSettings {
     #[key]
@@ -15,7 +13,9 @@ struct GameSettings {
     players_number: u32,
 }
 
-// TESTS:
+// ---------------------------
+// ---------- Tests ----------
+// ---------------------------
 #[cfg(test)]
 mod tests {
     // IMPORT TEST REFERENCES

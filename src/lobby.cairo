@@ -19,12 +19,12 @@ struct Lobby {
 
 #[generate_trait]
 impl LobbyFunctions of LobbyTrait {
-    /// @title - LOBBY FUNCTIONS
-    /// @notice - Initialize a lobby
-    /// @dev - It will check for players list lenght and set lobby as ready when 
-    /// players number is achieved. 
-    /// @param - GameSettings
-    /// @return - none
+    /// @title: LOBBY FUNCTIONS
+    /// @notice: Initialize a lobby
+    /// @dev: The function will initialize a lobby check for players list lenght
+    /// and wll set lobby as ready when players number is achieved. 
+    /// @param: GameSettings
+    /// @return: none
     fn start_lobby(game_settings: GameSettings) {
     // CREATE LOBBY STRUCT 
     '---START LOBBY FUNCTION---'.print();
@@ -60,7 +60,9 @@ impl LobbyFunctions of LobbyTrait {
 
 }
 
-
+// ---------------------------
+// ---------- Tests ----------
+// ---------------------------
 // START LOBBY TEST
 #[cfg(test)]
 mod tests {

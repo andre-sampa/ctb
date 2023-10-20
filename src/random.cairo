@@ -1,11 +1,11 @@
 //  - Not Ready, still pseudo random. 
 // Maybe we can pass some variable from game_entropy as entropy
 
-/// @title - RANDOM FUNCTION
-/// @notice - Pseudo random generator
-/// @dev - an entropy given as parameter will return different 'random' numbers
-/// @param - entropy number --- THE GOAL IS TO SEND A VARIABLE FROM game_entropy IN THE FUTURE
-/// @return - A number between 0 and 100 
+/// @title: RANDOM FUNCTION
+/// @notice: Pseudo random generator
+/// @dev: an entropy given as parameter will return different 'random' numbers
+/// @param: entropy number --- THE GOAL IS TO SEND A VARIABLE FROM game_entropy IN THE FUTURE
+/// @return: A number between 0 and 100 
 
 use debug::PrintTrait;
 
@@ -18,6 +18,9 @@ fn Random(entropy:u64) -> u64 {
     random_number % 101
 }
 
+// ---------------------------
+// ---------- Tests ----------
+// ---------------------------
 // RANDOM FUNCTION TEST
 #[cfg(test)]
 mod tests {
