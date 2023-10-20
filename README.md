@@ -20,8 +20,6 @@
 
 Call the Banners game on Starknet. First approach to Cairo and Realms AW integration.
 
-Read the full tutorial [here](https://book.dojoengine.org/cairo/hello-dojo.html)
-
 ---
 
 <img align="center" width=100% height=100% src="http://andre.x10.mx/ctb.png">
