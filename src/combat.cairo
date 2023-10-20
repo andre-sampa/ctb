@@ -76,8 +76,8 @@ mod combat_system {
 // ATTACK TEST - Create a new player and a castle to verify attack and damage
 #[cfg(test)]
 mod tests {
-    use ctb_dojo::player::{Player, PlayerFunctions};
-    use ctb_dojo::castle::{Castle, CastleFunctions};
+    use ctb_dojo::player::{Player, PlayerFunction};
+    use ctb_dojo::castle::{Castle, CastleFunction};
     use ctb_dojo::random;
     use ctb_dojo::combat::combat_system;
     use debug::PrintTrait;
@@ -88,9 +88,9 @@ mod tests {
     fn north_attack_test() {
         let test_wallet = starknet::contract_address_const::<0x0>();
         let mut north_castle = Castle {name: 'north', HP: 100};
-        let mut new_player = PlayerFunctions::new ('Andre', test_wallet);
+        let mut new_player = PlayerFunction::new ('Andre', test_wallet);
         combat_system::attack (new_player, ref north_castle);
-        CastleFunctions::print_castle(north_castle);
+        CastleFunction::print_castle(north_castle);
         assert(north_castle.HP < 100, 'no damage');
     }
 
@@ -99,9 +99,9 @@ mod tests {
     fn south_attack_test() {
         let test_wallet = starknet::contract_address_const::<0x0>();
         let mut south_castle = Castle {name: 'south', HP: 100};
-        let mut new_player = PlayerFunctions::new ('Andre', test_wallet);
+        let mut new_player = PlayerFunction::new ('Andre', test_wallet);
         combat_system::attack (new_player, ref south_castle);
-        CastleFunctions::print_castle(south_castle);
+        CastleFunction::print_castle(south_castle);
         assert(south_castle.HP < 100, 'no damage');
     }
 

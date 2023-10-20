@@ -18,8 +18,7 @@ struct GameSettings {
 // ---------------------------
 #[cfg(test)]
 mod tests {
-    // IMPORT TEST REFERENCES
-    use ctb_dojo::player::{Player, PlayerFunctions};
+    use ctb_dojo::player::{Player, PlayerFunction};
     use ctb_dojo::castle::{Castle, };
     use ctb_dojo::game_settings::GameSettings;
 

@@ -14,7 +14,7 @@ struct Player {
 }
 
 #[generate_trait]
-impl PlayerFunctions of PlayerTrait {
+impl PlayerFunction of PlayerTrait {
     /// @title: SHARPEN FUNCTION
     /// @notice: Define a Player Trait for '!sharpen' command 
     /// @dev: Check why we can't add a character on message variable. (felt252 size)
@@ -98,7 +98,7 @@ impl PlayerFunctions of PlayerTrait {
 #[cfg(test)]
 mod tests {
 
-    use ctb_dojo::player::{PlayerFunctions};
+    use ctb_dojo::player::{PlayerFunction};
     use debug::PrintTrait;
 
     // PLAYER SHARPEN TEST - Verify player.sharpen bool 
@@ -106,9 +106,9 @@ mod tests {
     #[available_gas(100000)]
     fn sharpen_test() {
         let test_wallet = starknet::contract_address_const::<0x01>();
-        let mut test_sharpen_player = PlayerFunctions::new('Andre', test_wallet);
+        let mut test_sharpen_player = PlayerFunction::new('Andre', test_wallet);
         test_sharpen_player.print_player();
-        assert(PlayerFunctions::sharpen(ref test_sharpen_player), 'not sharpened');
+        assert(PlayerFunction::sharpen(ref test_sharpen_player), 'not sharpened');
         assert(test_sharpen_player.sharpen(), 'error');
 
     }

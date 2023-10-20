@@ -2,9 +2,9 @@
 #[system]
 mod main_system {
     use starknet::ContractAddress;
-    use ctb_dojo::player::{Player, PlayerFunctions};
-    use ctb_dojo::castle::{Castle, CastleFunctions};
-    use ctb_dojo::lobby::{Lobby, LobbyFunctions};
+    use ctb_dojo::player::{Player, PlayerFunction};
+    use ctb_dojo::castle::{Castle, CastleFunction};
+    use ctb_dojo::lobby::{Lobby, LobbyFunction};
     use ctb_dojo::game_settings::GameSettings;
     use ctb_dojo::random;
     use debug::PrintTrait;
@@ -27,7 +27,7 @@ fn main() {
     // HOW DO WE CALL A SYSTEM IF WE LET EXECUTE FUNCTION?
     // THIS ONE IS WORKING BECAUSE WE GAVE THE FUNCTION A DIFFERENT NAME
     '---Calling start_lobby fn---'.print();
-    LobbyFunctions::start_lobby(game_settings);
+    LobbyFunction::start_lobby(game_settings);
 
     }
 }

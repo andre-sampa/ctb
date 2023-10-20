@@ -1,7 +1,7 @@
 use debug::PrintTrait;
 use array::ArrayTrait;
 use starknet::ContractAddress;
-use ctb_dojo::player::{Player, PlayerFunctions};
+use ctb_dojo::player::{Player, PlayerFunction};
 use ctb_dojo::combat::combat_system;
 
 
@@ -19,7 +19,7 @@ struct Castle {
 // CHECK WHY WE MUST CHANGE NAME, A BUG SAYS PlayerCastleImpl IS DEFINED MULTIPLE TIMES
 
 #[generate_trait]
-impl CastleFunctions of CastleTrait {
+impl CastleFunction of CastleTrait {
     /// @title: PRINT CASTLE
     /// @notice: Print a castle and it's properties
     /// @dev: Usefull for debug
@@ -43,14 +43,14 @@ impl CastleFunctions of CastleTrait {
         let mut south_castle = Castle {name: 'south', HP: 100};
         let mut north_castle = Castle {name: 'north', HP: 100};
         south_castle.print_castle();
-        CastleFunctions::print_castle(north_castle);
+        CastleFunction::print_castle(north_castle);
 
         '---CONGRATS, THE GAME IS ON!---'.print();
 
         '---ATTACK TEST!---'.print();
         '---calling sharpen function---'.print();
         let test_wallet = starknet::contract_address_const::<0x0>();
-        let mut test_player = PlayerFunctions::new ('Andre', test_wallet);
+        let mut test_player = PlayerFunction::new ('Andre', test_wallet);
         test_player.sharpen();
         combat_system::attack (test_player, ref south_castle);
     }
@@ -63,7 +63,7 @@ impl CastleFunctions of CastleTrait {
 #[cfg(test)]
 mod tests {
 
-    use ctb_dojo::castle::{Castle, CastleFunctions};
+    use ctb_dojo::castle::{Castle, CastleFunction};
     use debug::PrintTrait;
 
     #[test]

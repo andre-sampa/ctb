@@ -2,8 +2,8 @@ use debug::PrintTrait;
 use array::ArrayTrait;
 use starknet::ContractAddress;
 use ctb_dojo::game_settings::GameSettings;
-use ctb_dojo::player::{Player, PlayerFunctions};
-use ctb_dojo::castle::{Castle, CastleFunctions};
+use ctb_dojo::player::{Player, PlayerFunction};
+use ctb_dojo::castle::{Castle, CastleFunction};
 
 // LOBBY
 #[derive(Model, Copy, Drop, Serde, SerdeLen)]
@@ -18,7 +18,7 @@ struct Lobby {
 }
 
 #[generate_trait]
-impl LobbyFunctions of LobbyTrait {
+impl LobbyFunction of LobbyTrait {
     /// @title: LOBBY FUNCTIONS
     /// @notice: Initialize a lobby
     /// @dev: The function will initialize a lobby check for players list lenght
@@ -34,7 +34,7 @@ impl LobbyFunctions of LobbyTrait {
     // PLAYERS LIST ARRAY
     let mut players_list: Array<Player> = ArrayTrait::new();
     let test_wallet = starknet::contract_address_const::<0x0>();
-    let mut test_player = PlayerFunctions::new ('Andre', test_wallet);
+    let mut test_player = PlayerFunction::new ('Andre', test_wallet);
     players_list.append(test_player);
     
 
@@ -53,7 +53,7 @@ impl LobbyFunctions of LobbyTrait {
         // CHECK READY STATUS AND START CASTLES
         if lobby.ready == true {
             '---Calling start_castle fn---'.print();
-            CastleFunctions::start_castles();
+            CastleFunction::start_castles();
         }
     
     }
@@ -66,7 +66,7 @@ impl LobbyFunctions of LobbyTrait {
 // START LOBBY TEST
 #[cfg(test)]
 mod tests {
-    use super::LobbyFunctions;
+    use super::LobbyFunction;
     use ctb_dojo::game_settings::GameSettings;
 
     #[test]
@@ -76,7 +76,7 @@ mod tests {
         let cool_down = 60;
         let Players_number = 1;
         let settings = GameSettings {game_settings_id: id, combat_cool_down: cool_down, players_number: Players_number,};
-        LobbyFunctions::start_lobby(settings);
+        LobbyFunction::start_lobby(settings);
         let x = 1;
         assert(x ==1, 'x is not 1');
     }
