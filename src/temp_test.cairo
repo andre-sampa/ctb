@@ -1,4 +1,3 @@
-#[system]
 mod test_system {
     fn execute() {
        let x = 4;

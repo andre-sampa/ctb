@@ -1,5 +1,4 @@
 // MAIN START
-#[system]
 mod main_system {
     use starknet::ContractAddress;
     use ctb_dojo::player::{Player, PlayerFunction};
