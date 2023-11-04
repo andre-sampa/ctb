@@ -2,7 +2,6 @@
 /// @notice: Functions for combat dynamics 
 /// @dev: attack, parry, duel, loot 
 
-#[system]
 mod combat_system {
     use debug::PrintTrait;
     use starknet::ContractAddress;
